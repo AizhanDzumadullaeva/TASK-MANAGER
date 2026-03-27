@@ -16,14 +16,14 @@ class AuthController extends Controller
             'email' => 'required|email|unique:users',
             'password' => 'required|string|min:6',
             ] );
-
+    
             $user = User::create([
                 'name' => $request->name,
                 'email' => $request->email,
                 'password' => Hash::make($request->password)]);
-                
+    
                 return response()->json(['message' => 'User registered', 'user'=>$user]);
-    }
+    } 
     public function login(Request $request)
     {
         $request->validate([
@@ -40,6 +40,11 @@ class AuthController extends Controller
                 'email' => ['The provided credentials are incorrect.']
             ]);
         }
-        return response()->json(['message'=>'Login successful', 'user'=>$user]);
-    }
-}
+        $token = $user->createToken('api-token')->plainTextToken;
+        
+        return response()->json([
+        'message'=>'Login successful',
+        'token'=>$token, 
+        'user'=>$user
+        ]);
+} }

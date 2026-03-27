@@ -11,9 +11,9 @@ class Task extends Model
 use HasFactory;
 
 protected $fillable = [
+    'title',
     'user_id',
     'category_id',
-    'title',
     'description',
     'status',
     'due_date'
@@ -25,6 +25,6 @@ public function category()
 }
 public function user()
 {
-    return $this->bellongsto(User::class);
+    return $this->belongsTo(User::class);
 }
 }

@@ -12,7 +12,7 @@ public function up()
         $table->id();
 
         $table->foreignId('user_id')->constrained()->onDelete('cascade');
-        $table->foreignId('category_id')->constrained()->onDelete('cascade');
+        $table->foreignId('category_id')->nullable()->constrained()->onDelete('cascade');
         
         $table->string('title');
         $table->text('description')->nullable();

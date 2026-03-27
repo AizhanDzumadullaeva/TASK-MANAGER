@@ -2,40 +2,53 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Task;
 use Illuminate\Http\Request;
+use App\Models\Task;
 
 class TaskController extends Controller
 {
+
     public function index()
     {
-        return response()->json(Task::with('category','user')->get());
+        return Task::where('user_id', auth()->id())->get();
     }
+
 
     public function store(Request $request)
     {
-        $request->validate(['user_id'=>'required|exists:users,id', 
-                           'category_id'=>'required|exists:categories,id',
-                           'title'=>'required|string|max:255',
-                           'description'=>'nullable|string',
-                           'status'=>'required|in:Pending,In Progress,Done',
-                           'due_date'=>'nullable|date']);
-    $task = Task::create($request->all());
-    return response()->json($task);
+        $request->validate([
+            'title' => 'required|string'
+        ]);
+
+        $task = Task::create([
+            'title' => $request->title,
+            'user_id' => auth()->id(),
+            'category_id'=> null
+        ]);
+
+        return response()->json($task);
     }
-    public function update(Request $request,$id)
+
+    
+    public function update(Request $request, $id)
     {
-        $task = Task::FindOrFail($id);
+        $task = Task::findOrFail($id);
 
-        $task->update($request->all());
+        $task->update([
+            'title' => $request->title
+        ]);
+
+        return response()->json($task);
     }
 
+    
     public function destroy($id)
     {
-        $task= Task::findOrFail($id);
-
+        $task = Task::findOrFail($id);
         $task->delete();
 
-        return response()->json(['message'=>'Task deleted']);
+        return response()->json([
+            'message' => 'Task deleted'
+        ]);
     }
-    }
+}
