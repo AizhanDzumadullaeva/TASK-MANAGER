@@ -1,3 +1,4 @@
+<img width="1268" height="989" alt="2026-04-05_21-58-08" src="https://github.com/user-attachments/assets/b05de207-2226-4221-984c-1a0e30328e24" />
 # Task Manager - Full Stack Application
 
 Modern Task Management App built with Laravel 11 (Backend REST API) + React + Vite (Frontend).
