@@ -1,3 +1,4 @@
+<img width="1364" height="982" alt="2026-04-05_21-59-27" src="https://github.com/user-attachments/assets/11acc73a-4f10-459b-8741-4b1b91c36e8d" />
 <img width="1268" height="989" alt="2026-04-05_21-58-08" src="https://github.com/user-attachments/assets/b05de207-2226-4221-984c-1a0e30328e24" />
 # Task Manager - Full Stack Application
 
