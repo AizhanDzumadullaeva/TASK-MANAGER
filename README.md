@@ -1,36 +1,48 @@
-Task Manager Rest Api
+# Task Manager - Full Stack Application
 
-Stask:
-Laravel
-MySQL
-REST API
-Postman
+Modern Task Management App built with Laravel 11 (Backend REST API) + React + Vite (Frontend).
 
-Features:
-Create task
-Update task
-Delete task
-Task list
+Open to remote work and relocation opportunities.
 
-# Task Manager
+## ✨ Features
 
-## Features
--User registration
--User login (token auth)
--Create task
--Get tasks
--Delete task
+- User Authentication  
+  - Registration  
+  - Login (Sanctum token-based authentication)  
+  - Protected routes
 
-## Tech Stask
--Laravel (Backend API)
--React (Frontend)
--SQLite
+- Task Management (CRUD)  
+  - Create new task  
+  - View all tasks (list)  
+  - Update task  
+  - Delete task  
 
-## How to run
+- RESTful API with JSON responses  
+- Responsive React frontend  
+- Clean MVC architecture on backend
 
-### Backend
-php artisan serve
+## 🛠 Tech Stack
 
-### Frontend
-npm start
+Backend:
+- PHP 8.2+ / Laravel 11
+- MySQL / SQLite
+- Laravel Sanctum (Auth)
+- Eloquent ORM
+- REST API
 
+Frontend:
+- React 18 + Vite
+- Axios (API calls)
+- Tailwind CSS or custom styling (қосымша болса көрсет)
+
+Tools:
+- Composer, npm/yarn
+- Postman (API testing)
+- Git
+
+## 🚀 Quick Start
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/AizhanDzumadullaeva/TASK-MANAGER.git
+cd TASK-MANAGER
